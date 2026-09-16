@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tanta Warehouse — sandbox belajar web development dari nol, showcase project & progress belajar Tanta.">
-<meta name="keywords" content="web development, portfolio, sandbox, belajar coding, Tanta">
-<meta name="author" content="Tanta">
+    <meta name="keywords" content="web development, portfolio, sandbox, belajar coding, Tanta">
+    <meta name="author" content="Tanta">
 
-<!-- Open Graph (buat preview pas di-share di sosmed) -->
-<meta property="og:title" content="Tanta Warehouse">
-<meta property="og:description" content="Sandbox belajar web development dari nol — mulai dari HTML/CSS polos sampe project kompleks.">
-<meta property="og:type" content="website">
-       <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Open Graph (buat preview pas di-share di sosmed) -->
+    <meta property="og:title" content="Tanta Warehouse">
+    <meta property="og:description" content="Sandbox belajar web development dari nol — mulai dari HTML/CSS polos sampe project kompleks.">
+    <meta property="og:type" content="website">
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
     <title>Tanta's Warehouse</title>
@@ -24,54 +25,73 @@
             <a href="#home"><i class="fa-solid fa-house"></i> Home</a>
             <a href="#about"><i class="fa-solid fa-user"></i> About</a>
             <a href="#projects"><i class="fa-solid fa-code"></i> Projects</a>
+            <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+            <label class="switch" aria-label="Toggle dark or light mode">
+  <input type="checkbox" id="theme-toggle">
+  <span class="slider"></span>
+</label>
         </nav>
     </header>
 
     <section id="home">
-       <h2>Welcome to Tanta Warehouse</h2>
-       <p>Ini tempat gua eksperimen & belajar web development dari nol — 
-  mulai dari HTML/CSS polos, sampe (semoga) jadi project yang makin kompleks. 
-  Anggap aja ini lab pribadi gua buat coba-coba dan salah-salah.</p>
-     </section>
+        <h2>Welcome to Tanta Warehouse</h2>
+        <p>Ini tempat gua eksperimen & belajar web development dari nol —
+        mulai dari HTML/CSS polos, sampe (semoga) jadi project yang makin kompleks.
+        Anggap aja ini lab pribadi gua buat coba-coba dan salah-salah.</p>
+    </section>
 
-     <section id="about">
-       <h2>About</h2>
-       <div class="about-content">
-       <img src="https://api.dicebear.com/10.x/shadows/svg?headsVariant=oval&shouldersVariant=regular&topsVariant=hat&inkColor=2ec27e&seed=tanta" alt="avatar" class="avatar">
-       <p>Gua Tanta, lulusan RPL yang lagi belajar web dev lagi dari fundamental. 
-  Website ini jadi sandbox gua — tempat nyimpen progress belajar, 
-  eksperimen kode, sampe project-project kecil yang gua bikin sambil jalan.</p>
+    <section id="about">
+        <h2>About</h2>
+        <div class="about-content">
+            <img src="https://api.dicebear.com/10.x/shadows/svg?headsVariant=oval&shouldersVariant=regular&topsVariant=hat&inkColor=2ec27e&seed=tanta" alt="Illustrated avatar representing Tanta" class="avatar">
+            <p>Gua Tanta, lulusan RPL yang lagi belajar web dev lagi dari fundamental.
+            Website ini jadi sandbox gua — tempat nyimpen progress belajar,
+            eksperimen kode, sampe project-project kecil yang gua bikin sambil jalan.</p>
         </div>
-     </section>
+    </section>
 
-     <section id="projects">
-  <h2>Projects</h2>
-  <div class="project-cards">
-    <div class="card">
-      <h3>Nama Project 1</h3>
-      <p>Deskripsi singkat project ini, apa yang dipelajari atau dibikin.</p>
-      <a href="https://github.com/username/repo1" target="_blank">
-        <i class="fa-brands fa-github"></i> Lihat di GitHub
-      </a>
-    </div>
-    <div class="card">
-      <h3>Nama Project 2</h3>
-      <p>Deskripsi singkat project ini.</p>
-      <a href="https://github.com/username/repo2" target="_blank">
-        <i class="fa-brands fa-github"></i> Lihat di GitHub
-      </a>
-    </div>
-  </div>
-</section>
-<script src="script.js"></script>
+    <section id="projects">
+        <h2>Projects</h2>
+        <p id="project-count"></p>
+        <div class="project-cards" id="project-container">
+            <p class="loading">Loading projects...</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/xwlpkkby" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                <span class="error-message" id="name-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="email-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <span class="error-message" id="message-error"></span>
+            </div>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/tantaharamadhan" target="_blank" aria-label="Tanta's GitHub profile"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/tantaha-ramadhan-960131362/" target="_blank" aria-label="Tanta's LinkedIn profile"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="mailto:tantaharamadhan@gmail.com" aria-label="Email Tanta"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2026 Tanta Warehouse. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-
-<footer>
-  <div class="social-links">
-    <a href="https://github.com/tantaharamadhan" target="_blank"><i class="fa-brands fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/tantaha-ramadhan-960131362/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-    <a href="mailto:tantaharamadhan@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-  </div>
-  <p>&copy; 2026 Tanta Warehouse. All rights reserved.</p>
-</footer>
 </html>
